@@ -9,7 +9,7 @@
 EBTNodeResult::Type UChooseNextWaypoint::ExecuteTask(UBehaviorTreeComponent & OwnerComp, uint8 * NodeMemory)
 {
 	UBlackboardComponent* BlackboardComp = OwnerComp.GetBlackboardComponent();
-	UPatrolRoute* PatrolRoute = Cast<UPatrolRoute>(OwnerComp.GetAIOwner()->GetPawn());
+	UPatrolRoute* PatrolRoute = Cast<UPatrolRoute>(OwnerComp.GetAIOwner()->GetPawn()->FindComponentByClass<UPatrolRoute>());
 	
 	if (!ensure(PatrolRoute && BlackboardComp)) { return EBTNodeResult::Failed; }
 	// GET PATROL POINTS
