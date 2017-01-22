@@ -28,6 +28,7 @@ public:
 	UPROPERTY(VisibleDefaultsOnly, Category = Mesh)
 	class USceneComponent* FP_MuzzleLocation;
 
+	UFUNCTION(BlueprintCallable, Category="Gameplay")
 	virtual void OnFire();
 
 	/** Projectile class to spawn */
